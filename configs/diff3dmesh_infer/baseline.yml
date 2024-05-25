@@ -1,0 +1,13 @@
+dataset:
+    test_list: ['Demo']
+    input_joint_set: 'vm'
+    workers: 8
+    use_tight_bbox: True
+
+model:
+    name: 'diff3dmesh'
+
+test:
+    save_obj: False
+    multi_n: 1
+    weight_path: 'experiment/diff3dmesh_train/baseline/baseline.pth.tar'

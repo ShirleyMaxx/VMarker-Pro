@@ -1,0 +1,60 @@
+dataset:
+    train_list: ['Human36M', 'HP3D', 'Up_3D', 'MSCOCO']
+    test_list: ['SURREAL']
+    input_joint_set: 'vm'
+    workers: 8
+    test_sampling: True
+
+model:
+    name: 'diff3dmesh'
+
+diffusion:
+    parameterization: 'x0'
+
+loss:
+    loss_weight_joint3d: 100
+    loss_weight_joint3d_reg: 0.1
+    loss_weight_conf: 0.1
+    loss_weight_mesh3d: 0.1
+    loss_weight_normal: 0.1
+    loss_weight_edge: 0.01
+    loss_weight_noise: 1
+
+train:
+    print_freq: 100
+    vis_freq: 2000
+    batch_size: 40
+    shuffle: True
+    begin_epoch: 1
+    end_epoch: 70
+    scheduler: 'step'
+    lr: 0.0002
+    lr_step: [30, 40, 50]
+    lr_factor: 0.5
+    simple3dpose_lr: 0.00004
+    simple3dpose_lr_step: [30, 40, 50]
+    simple3dpose_lr_factor: 0.5
+    diff_lr: 0.002
+    diff_lr_step: [30, 40, 50]
+    diff_lr_factor: 0.1
+    optimizer: 'adam'
+    edge_loss_start: 10
+    resume_weight_path: ''
+
+aug:
+    flip: False
+    rotate_factor: 30
+    color_factor: 0.2
+    scale_factor: 0.3
+    occlusion: True
+
+test:
+    batch_size: 40
+    shuffle: False
+    vis: True
+    vis_freq: 5000
+    save_obj: True
+    save_render: True
+    multi_n: 10
+    method: 'min'
+    weight_path: 'experiment/diff3dmesh_train/baseline/baseline.pth.tar'

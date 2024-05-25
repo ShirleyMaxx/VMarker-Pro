@@ -13,7 +13,7 @@ version.py
 /.eggs
 /dist
 /build
-/virtualmarker.egg-info
+*.egg-info
 tools/*.jpg
 /mmtracking
 __pycache__
