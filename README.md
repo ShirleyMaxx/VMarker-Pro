@@ -17,12 +17,12 @@
   <img src="demo/quality_results.png"/>
 </p>
 <p align="middle">
-  <img src="demo/demo1.gif" height="120" /> 
-  <img src="demo/demo2.gif" height="120" /> 
+  <img src="demo/demo1.gif" height="100" /> 
+  <img src="demo/demo2.gif" height="100" /> 
 </p>
 <p align="middle">
-  <img src="demo/demo3.gif" height="120" /> 
-  <img src="demo/demo4.gif" height="120" /> 
+  <img src="demo/demo3.gif" height="100" /> 
+  <img src="demo/demo4.gif" height="100" /> 
 </p>
 
 
