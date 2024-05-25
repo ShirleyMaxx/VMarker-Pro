@@ -46,7 +46,7 @@ This is the offical [Pytorch](https://pytorch.org/) implementation of our paper:
 
 </h4>
 
-It is an extension of [VMaker (CVPR 2023)](https://github.com/ShirleyMaxx/VirtualMarker) which support probabilistic 3D human mesh estimation.
+It is an extension of [VMarker (CVPR 2023)](https://github.com/ShirleyMaxx/VirtualMarker) which supports probabilistic 3D human mesh estimation.
 Below is the overall VMarker-Pro framework.
 
 <p align="center">
@@ -54,20 +54,20 @@ Below is the overall VMarker-Pro framework.
 </p>
 
 ### Notes :dart:
-This repository provides guidelines for VMarker-Pro exclusively. It is backward compatible and supports all [VMaker](https://github.com/ShirleyMaxx/VirtualMarker) commands. For instructions on training and inference with VMarker, please refer to [VMaker](https://github.com/ShirleyMaxx/VirtualMarker). A only difference is that this repo supports PyTorch's [DDP](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html) training.
+This repository provides guidelines for VMarker-Pro exclusively. It is backward compatible and supports all [VMarker](https://github.com/ShirleyMaxx/VirtualMarker) commands. For instructions on training and inference with VMarker, please refer to [VMarker](https://github.com/ShirleyMaxx/VirtualMarker). The only difference is that this repo supports PyTorch's [DDP](https://pytorch.org/tutorials/intermediate/ddp_tutorial.html) training.
 
 
 
 ## Installation
 
-1. Install dependences. This project is developed using >= python 3.8 on Ubuntu 16.04. NVIDIA GPUs are needed. We recommend you to use an [Anaconda](https://www.anaconda.com/) virtual environment.
+1. Install dependencies. This project is developed using >= python 3.8 on Ubuntu 16.04. NVIDIA GPUs are needed. We recommend you use an [Anaconda](https://www.anaconda.com/) virtual environment.
 
   ```bash
     # 1. Create a conda virtual environment.
     conda create -n pytorch python=3.8 -y
     conda activate pytorch
 
-    # 2. Install PyTorch >= v1.13.0 following [official instruction](https://pytorch.org/). Please adapt the cuda version to yours.
+    # 2. Install PyTorch >= v1.13.0 following [official instruction](https://pytorch.org/). Please adapt the CUDA version to yours.
     pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 torchaudio==0.13.0 --extra-index-url https://download.pytorch.org/whl/cu117
 
 
@@ -112,11 +112,11 @@ This repository provides guidelines for VMarker-Pro exclusively. It is backward 
   - `vmpro` contains kernel codes for our method.
   - `main` contains high-level codes for training or testing the network.
   - `models` contains pre-trained weights. Download from [Google drive](https://drive.google.com/drive/folders/1IQ-rvjj_t6ZInlzDfKBNeJ0noOs3fIaW?usp=share_link) or [Onedrive](https://chinapku-my.sharepoint.com/:f:/g/personal/2101111546_pku_edu_cn/EggzlMbPMwtDr8aBb8HNySQBuhh3CtWceRbQMcMdiztDcg?e=YgTfry).
-  - *`experiment` will be automatically made after running the code, it contains the outputs, including trained model weights, test metrics and visualized outputs.
+  - *`experiment` will be automatically made after running the code, it contains the outputs, including trained model weights, test metrics, and visualized outputs.
   
 ## Quick demo :star:
 
-1. **Installation.** Make sure you have finished the above installation successfully. VirtualMarker does not detect person and only estimates relative pose and mesh, therefore please also install [VirtualPose](https://github.com/wkom/VirtualPose) following its instructions. VirtualPose will detect all the person and estimate their root depths. Download its model weight from [Google drive](https://drive.google.com/drive/folders/1Y8unp_CQnXsWr1WljAgW0rYCMGkru6Ce?usp=share_link) or [Onedrive](https://chinapku-my.sharepoint.com/:f:/g/personal/2101111546_pku_edu_cn/ElPhUt3LaJpMgv7dH7YbJ2gBHPqS7E6fQg41tszqmHbzmg?e=wyZOKW) and put it under `VirtualPose`.
+1. **Installation.** Make sure you have finished the above installation successfully. VMarker-Pro does not detect person and only estimates relative pose and mesh, therefore please also install [VirtualPose](https://github.com/wkom/VirtualPose) following its instructions. VirtualPose will detect all the person and estimate their root depths. Download its model weight from [Google drive](https://drive.google.com/drive/folders/1Y8unp_CQnXsWr1WljAgW0rYCMGkru6Ce?usp=share_link) or [Onedrive](https://chinapku-my.sharepoint.com/:f:/g/personal/2101111546_pku_edu_cn/ElPhUt3LaJpMgv7dH7YbJ2gBHPqS7E6fQg41tszqmHbzmg?e=wyZOKW) and put it under `VirtualPose`.
   ```bash
   git clone https://github.com/wkom/VirtualPose.git
   cd VirtualPose
@@ -132,7 +132,7 @@ This repository provides guidelines for VMarker-Pro exclusively. It is backward 
 
 3. **Model weight.** Download the pre-trained VMarker-Pro models `baseline` from [Onedrive](https://chinapku-my.sharepoint.com/:u:/g/personal/2101111546_pku_edu_cn/ESX2io93u95BqEsldgjc520Bq5k77CWmzFO32furG7rhzA?e=dP2Vco). Put the weight below `experiment` folder and follow the directory structure. Specify the load weight path by `test.weight_path` in `configs/diff3dmesh_infer/baseline.yml`.
 
-4. **Input image/video.** Prepare `input.jpg` or `input.mp4` and put it at `inputs` folder. Both image and video input are supported. Specify the input path and type by arguments.
+4. **Input image/video.** Prepare `input.jpg` or `input.mp4` and put it in `inputs` folder. Both image and video input are supported. Specify the input path and type by arguments.
 
 5. **RUN.** You can check the output at `experiment/diff3dmesh_infer/exp_*/vis`. By default, we output only one solution. If multiple hypotheses are needed, please set `cfg.test.multi_n` accordingly.
   ```bash
@@ -143,7 +143,7 @@ This repository provides guidelines for VMarker-Pro exclusively. It is backward 
 
 ### Data
 
-Please follow [VMaker](https://github.com/ShirleyMaxx/VirtualMarker) to prepare the `data` directory.
+Please follow [VMarker](https://github.com/ShirleyMaxx/VirtualMarker) to prepare the `data` directory.
 
 
 ### Train
@@ -172,11 +172,11 @@ sh command/diff3dmesh_test/test_surreal.sh
 
 ### Model Zoo
 
-Download all model weights from [Onedrive](https://chinapku-my.sharepoint.com/:f:/g/personal/2101111546_pku_edu_cn/EnBL5ZBwmeVLrbIZ2Id9wbgB0SYmK_aE4crCYf3nX5RoNw?e=ADy57b).
+Download all model weights from [Onedrive](https://chinapku-my.sharepoint.com/:f:/g/personal/2101111546_pku_edu_cn/EnBL5ZBwmeVLrbIZ2Id9wbgB0SYmK_aE4crCYf3nX5RoNw?e=ADy57b) and put them under `experiment` folder.
 
 
 <!-- ## Citation
-Cite as below if you find this repository is helpful to your project:
+Cite below if you find this repository helpful to your project:
 ```bibtex
 @article{ma20233d,
   title={VMarker-Pro: Probabilistic 3D Human Mesh Estimation from Virtual Markers},
