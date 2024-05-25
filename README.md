@@ -17,12 +17,12 @@
   <img src="demo/quality_results.png"/>
 </p>
 <p align="middle">
-  <img src="demo/demo1.gif" height="100" /> 
-  <img src="demo/demo2.gif" height="100" /> 
+  <img src="demo/demo1.gif" width="48%" /> 
+  <img src="demo/demo2.gif" width="48%" /> 
 </p>
 <p align="middle">
-  <img src="demo/demo3.gif" height="100" /> 
-  <img src="demo/demo4.gif" height="100" /> 
+  <img src="demo/demo3.gif" width="48%" /> 
+  <img src="demo/demo4.gif" width="48%" /> 
 </p>
 
 
@@ -86,7 +86,7 @@ This repository provides guidelines for VMarker-Pro exclusively. It is backward 
    1. Install `smplx` package by `pip install smplx`. Already done in the first step.
    2. Download `basicModel_f_lbs_10_207_0_v1.0.0.pkl`, `basicModel_m_lbs_10_207_0_v1.0.0.pkl`, and `basicModel_neutral_lbs_10_207_0_v1.0.0.pkl` from [here](https://smpl.is.tue.mpg.de/) (female & male) and [here](http://smplify.is.tue.mpg.de/) (neutral) to `${Project}/data/smpl`. Please rename them as `SMPL_FEMALE.pkl`, `SMPL_MALE.pkl`, and `SMPL_NEUTRAL.pkl`, respectively.
    3. Download others SMPL-related from [Google drive](https://drive.google.com/drive/folders/1LRMo_7raQuSRuUKAvXKSlzlvQJ5C0IHR?usp=share_link) or [Onedrive](https://chinapku-my.sharepoint.com/:f:/g/personal/2101111546_pku_edu_cn/EitToj4t0BlMmKAo6CZT2H8BMmkyAKQBjY6kO5h0htKveA?e=b57zU5) and put them to `${Project}/data/smpl`.
-3. Download data following the **Data** section. In summary, your directory tree should be like this
+3. Download data following the [**Data**](https://github.com/ShirleyMaxx/VMarker-Pro?tab=readme-ov-file#data) section. In summary, your directory tree should be like this
 
   ```
     ${Project}
@@ -143,7 +143,7 @@ This repository provides guidelines for VMarker-Pro exclusively. It is backward 
 
 ### Data
 
-Please follow [VMarker](https://github.com/ShirleyMaxx/VirtualMarker) to prepare the `data` directory.
+Please follow [VMarker](https://github.com/ShirleyMaxx/VirtualMarker?tab=readme-ov-file#data) data section to prepare the `data` directory.
 
 
 ### Train
