@@ -1,6 +1,6 @@
 <div align="center">
 
-  <h1 align="center">VMarker-Pro: Probabilistic 3D Human Mesh Estimation from Virtual Markers</h1>
+  <h1 align="center">VMarker-Pro: Probabilistic 3D Human Mesh Estimation from Virtual Markers (TPAMI 2025)</h1>
   
 </div>
 
@@ -28,7 +28,7 @@
 
 ## Introduction
 
-This is the offical [Pytorch](https://pytorch.org/) implementation of our paper:
+This is the offical [Pytorch](https://pytorch.org/) implementation of our TPAMI 2025 paper:
 <h3 align="center">VMarker-Pro: Probabilistic 3D Human Mesh Estimation from Virtual Markers</h3>
 
 <h4 align="center" style="text-decoration: none;">
@@ -175,16 +175,18 @@ sh command/diff3dmesh_test/test_surreal.sh
 Download all model weights from [Onedrive](https://chinapku-my.sharepoint.com/:f:/g/personal/2101111546_pku_edu_cn/EnBL5ZBwmeVLrbIZ2Id9wbgB0SYmK_aE4crCYf3nX5RoNw?e=ADy57b) and put them under `experiment` folder.
 
 
-<!-- ## Citation
+## Citation
 Cite below if you find this repository helpful to your project:
 ```bibtex
-@article{ma20233d,
-  title={VMarker-Pro: Probabilistic 3D Human Mesh Estimation from Virtual Markers},
+@ARTICLE{ma2025vmarkerpro,
   author={Ma, Xiaoxuan and Su, Jiajun and Xu, Yuan and Zhu, Wentao and Wang, Chunyu and Wang, Yizhou},
-  journal={arXiv preprint},
-  year={2024}
-}
-``` -->
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+  title={VMarker-Pro: Probabilistic 3D Human Mesh Estimation From Virtual Markers}, 
+  year={2025},
+  volume={47},
+  number={5},
+  pages={3731-3747}}
+```
 
 ## Acknowledgement
 This repo is built on the excellent work [Pose2Mesh](https://github.com/hongsukchoi/Pose2Mesh_RELEASE), [HybrIK](https://github.com/Jeff-sjtu/HybrIK), [CLIFF](https://github.com/haofanwang/CLIFF) and [LDM](https://github.com/CompVis/latent-diffusion). Thanks for these great projects.
